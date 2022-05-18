@@ -1,40 +1,46 @@
 {
+  "name": "filegator",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "concurrently \"php -S localhost:8081\" \"vue-cli-service serve\"",
+    "build": "vue-cli-service build --no-clean",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e --headless",
+    "lint": "vue-cli-service lint --no-fix frontend/",
+    "e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "js-base64": "^3.7.2",
+    "prismjs": "^1.28.0",
+    "vue-lazyload": "^1.3.3",
+    "vue-prism-editor": "^1.3.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "^5.0.4",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "^5.0.4",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
+    "@vue/test-utils": "^2.0.0-rc.21",
+    "axios": "^0.27.2",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.1.0",
+    "buefy": "^0.9.20",
+    "concurrently": "^7.2.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "eslint-plugin-vue": "^7.0.0",
+    "node-sass": "^7.0.1",
+    "resumablejs": "^1.1.0",
+    "sass-loader": "^12.6.0",
+    "vue": "^3.2.33",
+    "vue-clipboard2": "^0.3.3",
+    "vue-router": "^4.0.15",
+    "vue-template-compiler": "^2.6.14",
+    "vuex": "^4.0.2"
+  }
 }
